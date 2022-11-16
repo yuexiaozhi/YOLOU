@@ -1838,7 +1838,7 @@ class ComputeLossv6_e:
                  fpn_strides=[8, 16, 32],
                  grid_cell_size=5.0,
                  grid_cell_offset=0.5,
-                 num_classes=80,
+                 num_classes=5,
                  ori_img_size=640,
                  warmup_epoch=4,
                  use_dfl=True,
@@ -2136,7 +2136,10 @@ class VarifocalLoss(nn.Module):
 
         weight = alpha * pred_score.pow(gamma) * (1 - label) + gt_score * label
         with torch.cuda.amp.autocast(enabled=False):
-            loss = (F.binary_cross_entropy(pred_score.float(), gt_score.float(), reduction='none') * weight).sum()
+            try:
+                loss = (F.binary_cross_entropy(pred_score.float(), gt_score.float(), reduction='none') * weight).sum()
+            except Exception as e:
+                print(e)
 
         return loss
 
