@@ -584,7 +584,7 @@ def parse_opt(known=False):
                              'yolov6-v1  :[yolov6-v1, ]'
                              'yolov6-v2:[yolov6-v2, yoloe]')
     parser.add_argument('--use_aux', type=bool, default=False, help='ues aux loss or not')
-    parser.add_argument('--weights', type=str, default='/kaggle/input/yolov6s/yolov6s.pt', help='initial weights path')
+    parser.add_argument('--weights', type=str, default='/kaggle/input/yolov6s1/yolov6s.pt', help='initial weights path')
     parser.add_argument('--cfg', type=str, default=ROOT / 'models/object_detection/yolov6_v2/yolov6s.yaml',
                         help='model.yaml path')
     parser.add_argument('--data', type=str, default=ROOT / 'data/coco128.yaml', help='dataset.yaml path')
