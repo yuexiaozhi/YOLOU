@@ -37,7 +37,7 @@ class Detectv6_E(nn.Module):
     '''
 
     def __init__(self,
-                 num_classes=80,
+                 num_classes=5,
                  channels_list=[64, 128, 256],
                  anchors=1,
                  num_layers=3,

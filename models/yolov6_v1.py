@@ -34,7 +34,7 @@ class Detectv6(nn.Module):
     With hardware-aware degisn, the decoupled head is optimized with hybridchannels methods.
     '''
     def __init__(self,
-                 num_classes=80,
+                 num_classes=5,
                  channels_list=[64, 128, 256],
                  anchors=1,
                  num_layers=3,
